@@ -171,6 +171,31 @@ show_media : true,
 show_media_size: 'thumb'
 });
 
+
+$('#tweecool2').tweecool({
+
+// Your twitter username
+username : 'walangpasok',
+
+// Number of tweets to show
+limit : 5, 
+
+// Show profile image
+profile_image : true, 
+
+// Show tweet time
+show_time : true, 
+
+// Show media
+show_media :false,
+
+//values: small, large, thumb, medium 
+show_media_size: 'thumb'
+});
+
+
+
+
 $.mobile.loading("hide");
 });
 </script>
@@ -303,10 +328,9 @@ setInterval(GetClock,1000);
 		<div data-role="footer" data-position="fixed" data-theme="g">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
-					<li><a href="#" data-icon="location" data-transition="none"></a></li>
-					<li><a href="#" data-icon="camera" data-transition="none"></a></li>
-					<li><a href="#" data-icon="info" data-transition="none"></a></li>
+					<li><a href="#homepage" data-icon="home" data-transition="none"></a></li>
+					<li><a href="#announcement" data-icon="info" data-transition="none"></a></li>
+
 				</ul>
 			</div>
 		</div>
@@ -404,10 +428,8 @@ setInterval(GetClock,1000);
 		<div data-role="footer" data-position="fixed" data-theme="g">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
-					<li><a href="#announcement" data-icon="location" data-transition="none"></a></li>
-					<li><a href="#" data-icon="camera" data-transition="none"></a></li>
-					<li><a href="#" data-icon="info" data-transition="none"></a></li>
+				<li><a href="#homepage" data-icon="home" data-transition="none"></a></li>
+					<li><a href="#announcement" data-icon="info" data-transition="none"></a></li>
 				</ul>
 			</div>
 		</div>
@@ -441,8 +463,7 @@ setInterval(GetClock,1000);
 			<a href="#keycities"  >Key Cities</a>
 			</li>
 			<li data-theme="c" >
-			<a href="#
-			" >Tourist</a>
+			<a href="#tourist" >Tourist</a>
 			</li>
 			<li data-theme="c" >
 			<a href="#" >Local Cities</a>
@@ -517,7 +538,7 @@ setInterval(GetClock,1000);
         </tr>
         <tr>
            <td>CALAPAN, Oriental Mindoro</td>
-			<td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32 °C  23°C</td>
+			<td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32 °C | 23°C</td>
 
         </tr>
 		<tr>
@@ -569,7 +590,7 @@ setInterval(GetClock,1000);
 		<div data-role="footer" data-position="fixed" data-theme="g">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
+					<li><a href="#homepage" data-icon="home" data-transition="none"></a></li>
 					<li><a href="#" data-icon="location" data-transition="none"></a></li>
 				</ul>
 			</div>
@@ -719,7 +740,7 @@ setInterval(GetClock,1000);
 		<div data-role="footer" data-position="fixed" data-theme="g">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
+					<li><a href="#homepage" data-icon="home" data-transition="none"></a></li>
 					<li><a href="#" data-icon="location" data-transition="none"></a></li>
 				</ul>
 			</div>
@@ -892,7 +913,7 @@ setInterval(GetClock,1000);
 		<div data-role="footer" data-position="fixed" data-theme="g">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
+				<li><a href="#homepage" data-icon="home" data-transition="none"></a></li>
 					<li><a href="#" data-icon="location" data-transition="none"></a></li>
 				</ul>
 			</div>
@@ -1101,13 +1122,12 @@ No Tropical Cyclone is expected to enter or develop inside the Philippine Area o
 
 		<div data-role="main" class="ui-content" data-theme="g">
 	<h5 style="text-align:center;"> Weekly FORECAST </h5>
-				 <p>Today <b> (November 27), </b> cloudy skies with light rains will be experienced over Cagayan Valley Region. Partly cloudy to cloudy skies with isolated light rains is expected over Metro Manila and the rest of Luzon. Partly cloudy to cloudy skies with isolated rainshowers or thunderstorms will prevail over the rest of the country. This weather scenario is likely to persist until Monday <b> (November 30).</b> <br><br>	
+				 <p>
+Today until Tomorrow (December 05), cloudy skies with light rains will prevail over Batanes, Apayao, Cagayan including the Calayan and Babuyan group of islands, and Isabela due to the Amihan (Northeast Monsoon). Meanwhile, Metro Manila and the rest of Luzon will have partly cloudy to cloudy skies with isolated light rains. Visayas and Mindanao will have generally fair weather conditions apart from isolated rainshowers or thunderstorms.
 
-			The Northeast Monsoon surge is expected to persist over the Extreme Northern Luzon until the rest of the outlook period <b>(December1-4),</b> bringing light rains over this area. Metro Manila and the rest of Luzon will have partly cloudy to cloudy skies with isolated light rains. The rest of the country will experience partly cloudy to cloudy skies with isolated rainshowers or thunderstorms.<br><br>
+By Sunday until Tuesday (December 6 - 8), Batanes, Calayan and Babuyan group of islands will experience cloudy skies with light rains. Metro Manila and the rest of the country will have partly cloudy to cloudy skies with isolated rainshowers or thunderstorms
 
-			No Tropical Cyclone is expected to enter Philippine Area of Responsibility (PAR) throughout the outlook period. However, this outlook will be updated as soon as significant changes in the weather pattern occur.
-
-			This outlook will be updated as soon as significant changes in the weather pattern occur.
+Throughout the rest of the outlook period (December 9 - 11), the whole country will have generally fair weather conditions apart from isolated rainshowers or thunderstorms.
 
 			</p>
 
@@ -1119,7 +1139,7 @@ No Tropical Cyclone is expected to enter or develop inside the Philippine Area o
 		<div data-role="footer" data-position="fixed" data-theme="g">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
+					<li><a href="#homepage" data-icon="home" data-transition="none"></a></li>
 					<li><a href="#" data-icon="location" data-transition="none"></a></li>
 				</ul>
 			</div>
@@ -1210,11 +1230,11 @@ No Tropical Cyclone is expected to enter or develop inside the Philippine Area o
 
 		<div data-role="header" data-position="fixed" data-theme="g">
 			<a href="#panelcontent" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" >Summary</a>
-			<h1>Advisories</h1>
+			<h1>Dam Status</h1>
 		</div>
 <div data-role="main" class="ui-content" onchange="viewdamtable()">
 			<h3>Status of Monitored Dams</h3>
-			<p>Date Updated: November 29, 2015</p>
+			<p>Date Updated: December 7, 2015</p>
 			<select name="dams" id="damlist">
 				<option value=0 selected hidden>[Select a Dam]</option>
 				<option value=1>Angat</option>
@@ -1279,7 +1299,7 @@ No Tropical Cyclone is expected to enter or develop inside the Philippine Area o
 		<div data-role="footer" data-position="fixed" data-theme="g">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
+					<li><a href="#homepage" data-icon="home" data-transition="none"></a></li>
 					<li><a href="#" data-icon="location" data-transition="none"></a></li>
 				</ul>
 			</div>
@@ -1431,7 +1451,7 @@ No Tropical Cyclone is expected to enter or develop inside the Philippine Area o
 		<div data-role="footer" data-position="fixed" data-theme="g">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
+					<li><a href="#homepage" data-icon="home" data-transition="none"></a></li>
 					<li><a href="#" data-icon="location" data-transition="none"></a></li>
 				</ul>
 			</div>
@@ -1528,7 +1548,7 @@ No Tropical Cyclone is expected to enter or develop inside the Philippine Area o
 	
 	
 		<div data-role="main" class="ui-content">
-
+	<div id="tweecool2" style="margin:10px"></div>
 			
 		</div>
 	
@@ -1541,8 +1561,8 @@ No Tropical Cyclone is expected to enter or develop inside the Philippine Area o
 		<div data-role="footer" data-position="fixed" data-theme="g">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
 					<li><a href="#homepage" data-icon="home" data-transition="none"></a></li>
+					<li><a href="#" data-icon="info" data-transition="none"></a></li>
 				</ul>
 			</div>
 		</div>
