@@ -1,0 +1,1552 @@
+﻿﻿<!DOCUMENT html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/pagasatheme.min.css" />
+	<link rel="stylesheet" href="css/jqm145.css" />
+	
+<style type="text/css">
+#tweecool ul {
+margin: 0;
+padding: 0;
+list-style: none;
+
+}
+.twitter-widget li {
+list-style: none;
+clear: both;
+}
+#tweecool li img, .twitter-widget li .tweets_txt {
+float: left;
+margin-bottom: 10px;
+margin-left: 5px;
+}
+#tweecool li img {
+-webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+border-radius: 30px;
+}
+.twitter-widget li .tweets_txt {
+width: 350px;
+margin-left: 10px;
+
+}
+#tweecool li .tweets_txt span {
+font-style: italic;
+color: #666;
+display: block;
+
+}
+
+ul{
+list-style: none;
+margin: 0;
+padding: 0;
+
+
+}
+
+#tweecool ul li{
+	margin: 10px 0;
+	
+}
+
+#clockbox ul li{
+	
+	background-size: 25% 100%;
+	padding: 0px 0px 0px 0px;
+	margin: 0 0;
+	color: #5500FF;
+	
+}
+
+#clockbox h1{
+	margin-bottom: 0em;
+	margin-top: 0em;
+	font-size: 3.5em;
+}
+
+.marquee {
+    width: 450px;
+	height: 2em;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee 50s linear infinite;
+}
+
+.marquee p{
+	font-size: 2em;
+}
+
+.marquee:hover {
+    animation-play-state: paused
+}
+
+/* Make it move */
+@keyframes marquee {
+    0%   { text-indent: 27.5em }
+    100% { text-indent: -105em }
+}
+
+/* Make it pretty */
+.microsoft {
+    padding-left: 1.5em;
+    position: relative;
+    font: 16px 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
+}
+
+/* ::before was :before before ::before was ::before - kthx */
+.microsoft:before, .microsoft::before {
+    z-index: 2;
+    content: '';
+    position: absolute;
+    top: -1em; left: -1em;
+    width: 1em; height: 1em;
+    background-image: url('images/speaker.png');
+}
+
+.microsoft:after, .microsoft::after {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 2em; height: 2em;
+    /*background-image: linear-gradient(90deg, white 70%, rgba(255,255,255,0));*/
+	background-image: url('images/speaker.png');
+	background-size: 100% 100%;
+}
+
+/* Style the links */
+.vanity {
+    color: #333;
+    text-align: center;
+    font: .75em 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
+}
+
+.vanity a, .microsoft a {
+    color: #1570A6;
+    transition: color .5s;
+    text-decoration: none;
+}
+
+.vanity a:hover, .microsoft a:hover {
+    color: #F65314;
+}
+
+/* Style toggle button */
+.toggle {
+	display: block;
+    margin: 2em auto;
+}
+  </style>
+
+	<script src="js/jq214.js"></script>
+	<script src="js/jqm145.js"></script>
+	
+	<script src="js/tweecool.min.js"></script>
+	<script src="js/pagasa.js"></script>
+  <script>
+$(document).ready(function() {
+$.mobile.loading("show");
+$('#tweecool').tweecool({
+
+// Your twitter username
+username : 'dost_pagasa',
+
+// Number of tweets to show
+limit : 5, 
+
+// Show profile image
+profile_image : true, 
+
+// Show tweet time
+show_time : true, 
+
+// Show media
+show_media : true,
+
+//values: small, large, thumb, medium 
+show_media_size: 'thumb'
+});
+
+$.mobile.loading("hide");
+});
+</script>
+<script>
+
+tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+var d=new Date();
+var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear();
+if(nyear<1000) nyear+=1900;
+var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nmin<=9) nmin="0"+nmin;
+if(nsec<=9) nsec="0"+nsec;
+
+//document.getElementById('clockbox').innerHTML=" "+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+document.getElementById('clockbox').innerHTML="<ul id='mytimelist' data-role='listview' data-inset='true'>"+"<li>"+"<center><span>PHILIPPINE STANDARD TIME</span><h1>"+nhour+":"+nmin+":"+nsec+ap+"</h1>"+"<span>"+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+"</span></center></li></ul>"+"<hr/>";
+}
+
+window.onload=function(){
+GetClock();
+setInterval(GetClock,1000);
+}
+
+
+
+</script>
+
+</head>
+
+<body>
+	<!-- Homepage -->
+	<div data-role="page" id="homepage" data-theme="g">
+
+		<!-- Panel -->
+		<div data-role="panel" id="panelcontent" data-display="overlay" data-position-fixed="true" data-theme="c">
+		<ul data-role="listview" data-theme="c">
+			<li>
+			<img src="images/icon.png"/>
+			<h2>PAGASA</h2>
+			<p>"tracking the sky...</p> 
+			<p style="float: right;">helping the country"</p>
+			</li>
+		</ul>
+			
+			
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3>General Weather</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#daily" >Daily</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#keycities" data-rel="popup">Key Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#tourist" >Tourist</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#" >Local Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#asian" >Asian Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#weekly" >Weekly Outlook</a>
+			</li>
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Flood Information</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#advisories" >Advisories</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#bulletin" data-rel="popup">Bulletin</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#dam" >Dam Status</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Weather Images</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#satellite" >Satellite</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#radar" data-rel="popup">Radar</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#surfacemap" >Surface Map</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+
+
+		</div>
+		<!-- End of Panel -->
+
+		<div data-role="header" data-position="fixed" data-theme="g">
+			<a href="#panelcontent" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" >Summary</a>
+			<h1></h1>
+		</div>
+
+		<div data-role="main" class="ui-content" data-theme="g">
+			<div id="clockbox"></div>
+			<p class="microsoft marquee"><span style="font-size: 1.5em;">This is an important news bulletin. A typhoon is headed in the PAR</span></p>
+			<div id="tweecool"></div>
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="g">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
+					<li><a href="#" data-icon="location" data-transition="none"></a></li>
+					<li><a href="#" data-icon="camera" data-transition="none"></a></li>
+					<li><a href="#" data-icon="info" data-transition="none"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	
+	<div data-role="page" id="daily" data-theme="g">
+
+		<!-- Panel -->
+		<div data-role="panel" id="panelcontent" data-display="overlay" data-position-fixed="true" data-theme="c">
+		<ul data-role="listview" data-theme="c">
+			<li>
+			<img src="images/icon.png"/>
+			<h2>PAGASA</h2>
+			<p>"tracking the sky...</p> 
+			<p style="float: right;">helping the country"</p>
+			</li>
+		</ul>
+			
+			
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3>General Weather</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#daily" >Daily</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#keycities"  >Key Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#tourist" >Tourist</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#" >Local Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#asian" >Asian Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#weekly" >Weekly Outlook</a>
+			</li>
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Flood Information</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#advisories" >Advisories</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#bulletin" data-rel="popup">Bulletin</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#dam" >Dam Status</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Weather Images</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#satellite" >Satellite</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#radar" data-rel="popup">Radar</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#surfacemap" >Surface Map</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+
+
+		</div>
+		<!-- End of Panel -->
+
+		<div data-role="header" data-position="fixed" data-theme="g">
+			<a href="#panelcontent" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" >Summary</a>
+			<h1>Daily Forecast</h1>
+		</div>
+
+		<div data-role="main" class="ui-content" data-theme="g">
+				<div id="show"> </div>
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="g">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
+					<li><a href="#announcement" data-icon="location" data-transition="none"></a></li>
+					<li><a href="#" data-icon="camera" data-transition="none"></a></li>
+					<li><a href="#" data-icon="info" data-transition="none"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	
+	 <div data-role="page" id="keycities" data-theme="g">
+
+		<!-- Panel -->
+		<div data-role="panel" id="panelcontent" data-display="overlay" data-position-fixed="true" data-theme="c">
+
+		<ul data-role="listview" data-theme="c">
+			<li>
+			<img src="images/icon.png"/>
+			<h2>PAGASA</h2>
+			<p>"tracking the sky...</p> 
+			<p style="float: right;">helping the country"</p>
+			</li>
+		</ul>
+			
+			
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3>General Weather</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#daily" >Daily</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#keycities"  >Key Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#
+			" >Tourist</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#" >Local Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#asian" >Asian Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#weekly" >Weekly Outlook</a>
+			</li>
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Flood Information</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#advisories" >Advisories</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#bulletin" data-rel="popup">Bulletin</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#dam" >Dam Status</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Weather Images</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#satellite" >Satellite</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#radar" data-rel="popup">Radar</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#surfacemap" >Surface Map</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+
+
+
+		</div>
+		<!-- End of Panel -->
+
+		<div data-role="header" data-position="fixed" data-theme="g">
+			<a href="#panelcontent" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" >Summary</a>
+			<h1>Key Cities</h1>
+		</div>
+
+		<div data-role="main" class="ui-content" data-theme="g">
+<table data-role="table" data-mode="" class="ui-responsive" class="city2">
+      <thead>
+        <tr>
+          <th data-priority="6">LOCATION </th>
+		  <th colspan="2">WEATHER </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CABANATUAN, Nueva Ecija</td>
+		  <td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32°C | 23°C</td>
+		  
+        </tr>
+        <tr>
+           <td>CALAPAN, Oriental Mindoro</td>
+			<td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32 °C  23°C</td>
+
+        </tr>
+		<tr>
+            <td>KALAYAAN GROUP OF ISLANDS, Palawan</td>
+		 	<td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32 °C | 23°C</td>
+        </tr>	
+		<tr>
+          <td> DUMAGUETE, Negros Oriental</td>
+			<td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day5.gif"><br>32 °C | 26°C</td>
+
+        </tr>
+		<tr>
+           <td> ROXAS, Capiz</td>
+		  	<td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32 °C | 23°C</td>
+        </tr>	
+		<tr>
+           <td> BORACAY ISLAND, Malay, Aklan</td>
+			<td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32 °C | 23°C</td>
+        </tr>
+		<tr>
+           <td> CATBALOGAN, Western Samar</td>
+		<td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day5.gif"><br>32 °C | 26°C</td>
+        </tr>
+		<tr>
+           <td> TAGBILARAN, Bohol</td>
+		  	<td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32 °C | 23°C</td>
+        </tr>
+		<tr>
+           <td> SURIGAO, Surigao del Norte</td>
+		 	<td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32 °C | 23°C</td>
+        </tr>
+		<tr>
+           <td>  GENERAL SANTOS, South Cotabato</td>
+		 	<td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32 °C | 23°C</td>
+        </tr>	
+		<tr>
+           <td> KIDAPAWAN, North Cotabato</td>
+		 	<td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32 °C | 23°C</td>
+        </tr>
+       
+
+      </tbody>
+    </table>
+		
+		
+		
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="g">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
+					<li><a href="#" data-icon="location" data-transition="none"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="page" id="tourist" data-theme="g">
+
+		<!-- Panel -->
+		<div data-role="panel" id="panelcontent" data-display="overlay" data-position-fixed="true" data-theme="c">
+
+		<ul data-role="listview" data-theme="c">
+			<li>
+			<img src="images/icon.png"/>
+			<h2>PAGASA</h2>
+			<p>"tracking the sky...</p> 
+			<p style="float: right;">helping the country"</p>
+			</li>
+		</ul>
+			
+			
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3>General Weather</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#daily" >Daily</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#keycities"  >Key Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#tourist" >Tourist</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#" >Local Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#asian" >Asian Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#weekly" >Weekly Outlook</a>
+			</li>
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Flood Information</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#advisories" >Advisories</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#bulletin" data-rel="popup">Bulletin</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#dam" >Dam Status</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Weather Images</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#satellite" >Satellite</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#radar" data-rel="popup">Radar</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#surfacemap" >Surface Map</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+
+
+		</div>
+		<!-- End of Panel -->
+
+		<div data-role="header" data-position="fixed" data-theme="g">
+			<a href="#panelcontent" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" >Summary</a>
+			<h1>Tourist</h1>
+		</div>
+
+		<div data-role="main" class="ui-content" data-theme="g">
+	 <table data-role="table" data-mode="columntoggle" data-column-btn-text="Show other dates" class="ui-responsive " class="tourist">
+      <thead>
+        <tr>
+          <th data-priority="1">TOURIST DESTINATIONS</th>
+          <th >07 Nov</th>
+          <th data-priority="3">08 Dec</th>
+          <th data-priority="4">09 Dec</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vigan(Cathedral & the Old Spanish Houses)</td>
+		  <td><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"> <br> 22 ° C  31 ° C</td>
+		  <td><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"> <br> 22 ° C  31 ° C</td>
+	   	  <td><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"> <br>22 ° C  31 ° C</td>
+
+        </tr>
+        <tr>
+           <td>Baguio(Mines View Park, Philippine Military Academy, Etc.)</td>
+		  <td><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"> <br> 22 ° C  31 ° C</td>
+		  <td><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"> <br> 22 ° C  31 ° C</td>
+	   	  <td><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"> <br>22 ° C  31 ° C</td>
+
+        </tr>
+		<tr>
+           <td>Banaue(Rice Terraces, Sagada)</td>
+		   <td><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"> <br> 22 ° C  31 ° C</td>
+		  <td><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"> <br> 22 ° C  31 ° C</td>
+	   	  <td><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"> <br>22 ° C  31 ° C</td>
+
+        </tr>	
+		<tr>
+           <td>Anilao (Beach Resorts)</td>
+			<td><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"> <br> 22 ° C  31 ° C</td>
+		  <td><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"> <br> 22 ° C  31 ° C</td>
+	   	  <td><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"> <br>22 ° C  31 ° C</td>
+
+        </tr>
+		<tr>
+           <td>Puerto Galera(Beach Resort & Diving Areas)</td>
+		    <td><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"> <br> 22 ° C  31 ° C</td>
+		  <td><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"> <br> 22 ° C  31 ° C</td>
+	   	  <td><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"> <br>22 ° C  31 ° C</td>
+
+        </tr>
+       
+
+      </tbody>
+    </table>
+		
+		
+		
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="g">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
+					<li><a href="#" data-icon="location" data-transition="none"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="asian" data-theme="g">
+
+		<!-- Panel -->
+		<div data-role="panel" id="panelcontent" data-display="overlay" data-position-fixed="true" data-theme="c">
+
+		<ul data-role="listview" data-theme="c">
+			<li>
+			<img src="images/icon.png"/>
+			<h2>PAGASA</h2>
+			<p>"tracking the sky...</p> 
+			<p style="float: right;">helping the country"</p>
+			</li>
+		</ul>
+			
+			
+	
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3>General Weather</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#daily" >Daily</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#keycities"  >Key Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#tourist" >Tourist</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#" >Local Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#asian" >Asian Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#weekly" >Weekly Outlook</a>
+			</li>
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Flood Information</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#advisories" >Advisories</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#bulletin" data-rel="popup">Bulletin</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#dam" >Dam Status</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Weather Images</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#satellite" >Satellite</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#radar" data-rel="popup">Radar</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#surfacemap" >Surface Map</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+
+		</div>
+		<!-- End of Panel -->
+
+		<div data-role="header" data-position="fixed" data-theme="g">
+			<a href="#panelcontent" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" >Summary</a>
+			<h1>Asian Cities</h1>
+		</div>
+
+		<div data-role="main" class="ui-content" data-theme="g">
+	 <table data-role="table" data-mode="columntoggle" class="ui-responsi "  id="myTable">
+      <thead>
+        <tr>
+          <th >LOCATION </th>
+		  <th colspan="2">Weather </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> TOKYO, Japan</td>
+		   <td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32°C | 23°C</td>
+        </tr>
+        <tr>
+           <td> SEOUL, S. Korea</td>
+		   <td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32°C | 23°C</td>
+        </tr>
+		<tr>
+            <td> BEIJING(PEKING), China</td>
+		   <td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32°C | 26°C</td>
+
+        </tr>	
+		<tr>
+          <td> TAIPEI, Taiwan</td>
+		   <td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day5.gif"><br>32°C | 23°C</td>
+
+        </tr>
+		<tr>
+           <td>  HONGKONG, China</td>
+			<td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32°C | 23°C</td>
+        </tr>	
+		<tr>
+           <td>  BANGKOK, Thailand</td>
+		   <td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32°C | 23°C</td>
+        </tr>
+		<tr>
+           <td>  KUALA LUMPUR, Malaysia</td>
+		   <td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32°C | 23°C</td>
+        </tr>
+		<tr>
+           <td>  SINGAPORE</td>
+		    <td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32°C | 23°C</td>
+        </tr>
+		<tr>
+           <td>JAKARTA, Indonesia</td>
+		    <td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32°C | 23°C</td>
+        </tr>
+		<tr>
+           <td>   HANOI, Vietnam</td>
+		    <td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32°C | 23°C</td>
+        </tr>	
+		<tr>
+           <td>  PHNOM PENH, Cambodia</td>
+		    <td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32°C | 26°C</td>
+        </tr>
+       <tr>
+           <td>   RANGOON, Myanmar</td>
+		    <td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32°C | 26°C</td>
+        </tr> 
+		<tr>
+           <td> HO CHI MINH, Vietnam</td>
+		    <td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32°C | 23°C</td>
+        </tr>
+		<tr>
+           <td> BRUNEI</td>
+		    <td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32°C | 23°C</td>
+        </tr>	<tr>
+           <td> SYDNEY, Australia</td>
+		    <td colspan="2"><img src="https://web.pagasa.dost.gov.ph/script/output/design/images/day3.gif"><br>32°C | 23°C</td>
+        </tr>
+       
+
+      </tbody>
+    </table>
+		
+		
+		
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="g">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
+					<li><a href="#" data-icon="location" data-transition="none"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="page" id="weekly" data-theme="g">
+
+		<!-- Panel -->
+		<div data-role="panel" id="panelcontent" data-display="overlay" data-position-fixed="true" data-theme="c">
+
+		<ul data-role="listview" data-theme="c">
+			<li>
+			<img src="images/icon.png"/>
+			<h2>PAGASA</h2>
+			<p>"tracking the sky...</p> 
+			<p style="float: right;">helping the country"</p>
+			</li>
+		</ul>
+			
+			
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3>General Weather</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#daily" >Daily</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#keycities"  >Key Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#tourist" >Tourist</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#" >Local Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#asian" >Asian Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#weekly" >Weekly Outlook</a>
+			</li>
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Flood Information</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#advisories" >Advisories</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#bulletin" data-rel="popup">Bulletin</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#dam" >Dam Status</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Weather Images</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#satellite" >Satellite</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#radar" data-rel="popup">Radar</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#surfacemap" >Surface Map</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+
+		
+
+
+		</div>
+		<!-- End of Panel -->
+
+		<div data-role="header" data-position="fixed" data-theme="g">
+			<a href="#panelcontent" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" >Summary</a>
+			<h1>Key Cities</h1>
+		</div>
+
+		<div data-role="main" class="ui-content" data-theme="g">
+	<h5 style="text-align:center;"> Weekly FORECAST </h5>
+				 <p>Today until Tomorrow (December 05), cloudy skies with light rains will prevail over Batanes, Apayao, Cagayan including the Calayan and Babuyan group of islands, and Isabela due to the Amihan (Northeast Monsoon). Meanwhile, Metro Manila and the rest of Luzon will have partly cloudy to cloudy skies with isolated light rains. Visayas and Mindanao will have generally fair weather conditions apart from isolated rainshowers or thunderstorms.
+<br>
+By Sunday until Tuesday (December 6 - 8), Batanes, Calayan and Babuyan group of islands will experience cloudy skies with light rains. Metro Manila and the rest of the country will have partly cloudy to cloudy skies with isolated rainshowers or thunderstorms
+<br>
+Throughout the rest of the outlook period (December 9 - 11), the whole country will have generally fair weather conditions apart from isolated rainshowers or thunderstorms.
+<br>
+No Tropical Cyclone is expected to enter or develop inside the Philippine Area of Responsibility (PAR). However, this outlook will be updated as soon as significant changes in the weather pattern occur.
+			</p>
+
+		
+		
+		
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="g">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
+					<li><a href="#" data-icon="location" data-transition="none"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="advisories" data-theme="g">
+
+		<!-- Panel -->
+		<div data-role="panel" id="panelcontent" data-display="overlay" data-position-fixed="true" data-theme="c">
+
+		<ul data-role="listview" data-theme="c">
+			<li>
+			<img src="images/icon.png"/>
+			<h2>PAGASA</h2>
+			<p>"tracking the sky...</p> 
+			<p style="float: right;">helping the country"</p>
+			</li>
+		</ul>
+			
+			
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3>General Weather</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#daily" >Daily</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#keycities"  >Key Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#tourist" >Tourist</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#" >Local Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#asian" >Asian Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#weekly" >Weekly Outlook</a>
+			</li>
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Flood Information</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#advisories" >Advisories</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#advisories" data-rel="popup">Bulletin</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#dam" >Dam Status</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Weather Images</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#satellite" >Satellite</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#radar" data-rel="popup">Radar</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#surfacemap" >Surface Map</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+
+		
+
+
+		</div>
+		<!-- End of Panel -->
+
+		<div data-role="header" data-position="fixed" data-theme="g">
+			<a href="#panelcontent" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" >Summary</a>
+			<h1>Advisories</h1>
+		</div>
+
+		<div data-role="main" class="ui-content" data-theme="g">
+	<h5 style="text-align:center;"> Weekly FORECAST </h5>
+				 <p>Today <b> (November 27), </b> cloudy skies with light rains will be experienced over Cagayan Valley Region. Partly cloudy to cloudy skies with isolated light rains is expected over Metro Manila and the rest of Luzon. Partly cloudy to cloudy skies with isolated rainshowers or thunderstorms will prevail over the rest of the country. This weather scenario is likely to persist until Monday <b> (November 30).</b> <br><br>	
+
+			The Northeast Monsoon surge is expected to persist over the Extreme Northern Luzon until the rest of the outlook period <b>(December1-4),</b> bringing light rains over this area. Metro Manila and the rest of Luzon will have partly cloudy to cloudy skies with isolated light rains. The rest of the country will experience partly cloudy to cloudy skies with isolated rainshowers or thunderstorms.<br><br>
+
+			No Tropical Cyclone is expected to enter Philippine Area of Responsibility (PAR) throughout the outlook period. However, this outlook will be updated as soon as significant changes in the weather pattern occur.
+
+			This outlook will be updated as soon as significant changes in the weather pattern occur.
+
+			</p>
+
+		
+		
+		
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="g">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
+					<li><a href="#" data-icon="location" data-transition="none"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="page" id="dam" data-theme="g">
+
+		<!-- Panel -->
+		<div data-role="panel" id="panelcontent" data-display="overlay" data-position-fixed="true" data-theme="c">
+
+		<ul data-role="listview" data-theme="c">
+			<li>
+			<img src="images/icon.png"/>
+			<h2>PAGASA</h2>
+			<p>"tracking the sky...</p> 
+			<p style="float: right;">helping the country"</p>
+			</li>
+		</ul>
+			
+			
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3>General Weather</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#daily" >Daily</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#keycities"  >Key Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#tourist" >Tourist</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#" >Local Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#asian" >Asian Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#weekly" >Weekly Outlook</a>
+			</li>
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Flood Information</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#advisories" >Advisories</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#advisories" data-rel="popup">Bulletin</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#dam" >Dam Status</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Weather Images</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#satellite" >Satellite</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#radar" data-rel="popup">Radar</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#surfacemap" >Surface Map</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+
+		
+
+
+		</div>
+		<!-- End of Panel -->
+
+		<div data-role="header" data-position="fixed" data-theme="g">
+			<a href="#panelcontent" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" >Summary</a>
+			<h1>Advisories</h1>
+		</div>
+<div data-role="main" class="ui-content" onchange="viewdamtable()">
+			<h3>Status of Monitored Dams</h3>
+			<p>Date Updated: November 29, 2015</p>
+			<select name="dams" id="damlist">
+				<option value=0 selected hidden>[Select a Dam]</option>
+				<option value=1>Angat</option>
+				<option value=2>Ipo</option>
+				<option value=3>La Mesa</option>
+				<option value=4>Ambuklao</option>
+				<option value=5>Bingas</option>
+				<option value=6>San Roque</option>	
+				<option value=7>Pantambangan</option>
+				<option value=8>Magat</option>
+				<option value=9>Caliraya</option>		
+			</select>
+			
+			<table data-role="table" data-mode="columntoggle:none" class="ui-responsive ui-shadow" data-column-btn-text="..." id="myTable">
+				<thead>
+					<tr style="border-bottom: 1px solid lightgray;">
+					<th>Date</th>
+					<th>Time</th>
+					<th>Water Level</th>
+					<th>24hr WL Deviation</th>
+					<th>FSHWL</th>
+					</tr>
+				</thead>
+				<tbody id="tabledam">
+					<script>
+					
+					function viewdamtable(){
+						var str;
+						var damValue = document.getElementById("damlist").value;
+						if (damValue == 1){
+							str = "<tr  style=\"border-bottom: 1px solid lightgray;\"><td>11-29</td><td>6:00am</td><td>208.13</td><td>-0.02</td><td>210</td></tr>";
+							str += "<tr  style=\"border-bottom: 1px solid lightgray;\"><td>11-29</td><td>6:00am</td><td>208.11</td><td>-0.06</td><td>210</td></tr>";
+							str += "<tr  style=\"border-bottom: 1px solid lightgray;\"><td>11-28</td><td>6:00am</td><td>208.17</td><td>-0.06</td><td>210</td></tr>";
+						} else if(damValue == 2) { 
+							str = "<tr  style=\"border-bottom: 1px solid lightgray;\"><td>11-29</td><td>6:00am</td><td>100.53</td><td>-0.09</td><td>101</td></tr>";
+							str += "<tr  style=\"border-bottom: 1px solid lightgray;\"><td>11-28</td><td>6:00am</td><td>100.44</td><td>-0.09</td><td>101</td></tr>";
+						} else if(damValue == 3) {
+							str = "<tr  style=\"border-bottom: 1px solid lightgray;\"><td>11-29</td><td>6:00am</td><td>78.73</td><td>0.04</td><td>80.15</td></tr>";
+							str += "<tr  style=\"border-bottom: 1px solid lightgray;\"><td>11-28</td><td>6:00am</td><td>78.69</td><td>0.04</td><td>80.15</td></tr>";
+						} else if(damValue == 4) {
+							str = "<tr  style=\"border-bottom: 1px solid lightgray;\"><td>11-29</td><td>6:00am</td><td>748.65</td><td>-0.05</td><td>752</td></tr>";
+							str += "<tr  style=\"border-bottom: 1px solid lightgray;\"><td>11-28</td><td>6:00am</td><td>748.80</td><td>-0.05</td><td>752</td></tr>";
+						} else if(damValue == 5) {
+							str = "<tr  style=\"border-bottom: 1px solid lightgray;\"><td>11-29</td><td>6:00am</td><td>574.39</td><td>0.12</td><td>575</td></tr>";
+							str += "<tr  style=\"border-bottom: 1px solid lightgray;\"><td>11-28</td><td>6:00am</td><td>574.29</td><td>0.12</td><td>575</td></tr>";
+						} else if(damValue == 6) {
+							str = "<tr  style=\"border-bottom: 1px solid lightgray;\"><td>11-29</td><td>6:00am</td><td>280.62</td><td>0.14</td><td>280</td></tr>";
+							str += "<tr  style=\"border-bottom: 1px solid lightgray;\"><td>11-28</td><td>6:00am</td><td>280.76</td><td>0.14</td><td>280</td></tr>";
+						} else if(damValue == 7) {
+							str = "<tr  style=\"border-bottom: 1px solid lightgray;\"><td>11-29</td><td>6:00am</td><td>206.81</td><td>-0.05</td><td>221</td></tr>";
+							str += "<tr  style=\"border-bottom: 1px solid lightgray;\"><td>11-28</td><td>6:00am</td><td>206.76</td><td>-0.05</td><td>221</td></tr>";
+						}
+						document.getElementById ("tabledam").innerHTML=str;
+					}
+					
+					</script>
+				</tbody>
+			</table>
+			
+			
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="g">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
+					<li><a href="#" data-icon="location" data-transition="none"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="page" id="satellite" data-theme="g">
+
+		<!-- Panel -->
+		<div data-role="panel" id="panelcontent" data-display="overlay" data-position-fixed="true" data-theme="c">
+
+		<ul data-role="listview" data-theme="c">
+			<li>
+			<img src="images/icon.png"/>
+			<h2>PAGASA</h2>
+			<p>"tracking the sky...</p> 
+			<p style="float: right;">helping the country"</p>
+			</li>
+		</ul>
+			
+			
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3>General Weather</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#daily" >Daily</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#keycities"  >Key Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#tourist" >Tourist</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#" >Local Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#asian" >Asian Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#weekly" >Weekly Outlook</a>
+			</li>
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Flood Information</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#advisories" >Advisories</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#advisories" data-rel="popup">Bulletin</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#dam" >Dam Status</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Weather Images</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#satellite" >Satellite</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#radar" data-rel="popup">Radar</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#surfacemap" >Surface Map</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+
+		
+
+
+		</div>
+		<!-- End of Panel -->
+
+		<div data-role="header" data-position="fixed" data-theme="g">
+			<a href="#panelcontent" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" >Summary</a>
+			<h1>Satellite</h1>
+		</div>
+	
+	
+	
+		<div data-role="main" class="ui-content">
+
+			<script>
+				var stringcontent;
+				function viewimage(imgload){
+					if(imgload==1){
+						stringcontent = "<img src=\"http://weather.com.ph/images/20151128061757.gif\" style=\"width:100%\" alt=\"\" />"
+						stringcontent += "<img src=\"http://src.meteopilipinas.gov.ph/repo/mtsat/24hour/latestMTSAT_CROP.gif\" style=\"width:100%\" alt=\"\" />";
+					} else {
+						stringcontent = "<p>Subic</p><img src=\"https://kidlat.pagasa.dost.gov.ph/images/Weather/radar/subic//SUB201511290730611024102482.png\" style=\"width:100%\" alt=\"\" >";
+						stringcontent += "<select name=\"cities\" id=\"plList\" onchange=\"initializeMaps()\">";
+						stringcontent += "<option value=0 selected hidden>[Select City]</option><option value=1>Subic</option><option value=2>Tagaytay</option><option value=3>Mactan</option><option value=4>Virac</option></select>";
+
+					}
+				document.getElementById("viewimage").innerHTML = stringcontent;
+				}
+	
+				function initializeMaps(){
+					var str;
+					if(document.getElementById("plList").value==1)
+						str = "<p>Subic</p><img src=\"https://kidlat.pagasa.dost.gov.ph/images/Weather/radar/subic//SUB201511290730611024102482.png\" style=\"width:100%\" alt=\"\" >";
+					if(document.getElementById("plList").value==2)
+						str  = "<p>Tagaytay</p><img src=\"https://kidlat.pagasa.dost.gov.ph/images/Weather/radar/tagaytay//TAG201511281602841024102482.png\" style=\"width:100%\" alt=\"\" >";
+					if(document.getElementById("plList").value==3)
+						str  = "<p>Mactan</p><img src=\"https://kidlat.pagasa.dost.gov.ph/images/Weather/radar/mactan/MAC201511290601b01024102482.png\" style=\"width:100%\" alt=\"\" >";
+					if(document.getElementById("plList").value==4)
+						str  += "<p>Virac</p><img src=\"https://kidlat.pagasa.dost.gov.ph/images/Weather/radar/virac/RadarViewer_20151129154205.jpg\" style=\"width:100%\" alt=\"\" >";
+					str += "<select name=\"cities\" id=\"plList\" onchange=\"initializeMaps()\">";
+					str += "<option value=0 selected hidden>[Select City]</option><option value=1>Subic</option><option value=2>Tagaytay</option><option value=3>Mactan</option><option value=4>Virac</option></select>";
+					document.getElementById("viewimage").innerHTML = str;
+				}
+
+			</script>
+			
+			<div data-role="controlgroup">
+				<a href="#" onclick="viewimage(1)" class="ui-btn ui-btn-inline ui-mini">Satellite</a>
+				<a href="#" onclick="viewimage(2)" class="ui-btn ui-btn-inline ui-mini">Radar</a>
+			</div>
+			<div id="viewimage">
+				<img src="http://src.meteopilipinas.gov.ph/repo/mtsat/24hour/latestMTSAT_CROP.gif" style="width:100%" alt="" />
+				<img src="http://weather.com.ph/images/20151128061757.gif" style="width:100%" alt="" />
+				
+			</div>
+			<h3>Weather Forecast</h3><p>As of today, there is no tropical cyclone update</p>
+
+			</div>
+	
+	
+	
+	
+	
+	
+		
+		<div data-role="footer" data-position="fixed" data-theme="g">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
+					<li><a href="#" data-icon="location" data-transition="none"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="page" id="announcement" data-theme="g">
+
+		<!-- Panel -->
+		<div data-role="panel" id="panelcontent" data-display="overlay" data-position-fixed="true" data-theme="c">
+
+		<ul data-role="listview" data-theme="c">
+			<li>
+			<img src="images/icon.png"/>
+			<h2>PAGASA</h2>
+			<p>"tracking the sky...</p> 
+			<p style="float: right;">helping the country"</p>
+			</li>
+		</ul>
+			
+			
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3>General Weather</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#daily" >Daily</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#keycities"  >Key Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#tourist" >Tourist</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#" >Local Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#asian" >Asian Cities</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#weekly" >Weekly Outlook</a>
+			</li>
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Flood Information</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#advisories" >Advisories</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#advisories" data-rel="popup">Bulletin</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#dam" >Dam Status</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-inset="false" data-iconpos="right" data-theme="g">
+			<h3 style="font-color: black;">Weather Images</h3>
+			<ul data-role="listview" data-theme="c">
+			
+			<li data-theme="c" >
+			<a href="#satellite" >Satellite</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#radar" data-rel="popup">Radar</a>
+			</li>
+			<li data-theme="c" >
+			<a href="#surfacemap" >Surface Map</a>
+			</li>
+			
+			</ul>
+		</div>
+		
+
+		
+
+
+		</div>
+		<!-- End of Panel -->
+
+		<div data-role="header" data-position="fixed" data-theme="g">
+			<a href="#panelcontent" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" >Summary</a>
+			<h1>Announcement</h1>
+		</div>
+	
+	
+	
+		<div data-role="main" class="ui-content">
+
+			
+		</div>
+	
+	
+	
+	
+	
+	
+		
+		<div data-role="footer" data-position="fixed" data-theme="g">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#panelcontent" data-icon="arrow-l" data-transition="none"></a></li>
+					<li><a href="#homepage" data-icon="home" data-transition="none"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
